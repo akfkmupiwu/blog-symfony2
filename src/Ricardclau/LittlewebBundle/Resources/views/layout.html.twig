@@ -25,12 +25,11 @@
         <footer>
             {% include 'RicardclauLittlewebBundle::footer.html.twig' %}
         </footer>
-    </div>
-    {% block javascripts %}
-        {% javascripts '@RicardclauLittlewebBundle/Resources/public/js/*' filter='?yui_js' output='js/minified.js' %}
-            <script type="text/javascript" src="{{ asset_url }}"></script>
-        {% endjavascripts %}
-    {% endblock %}
+        {% block javascripts %}
+            {% javascripts '@RicardclauLittlewebBundle/Resources/public/js/*' filter='?yui_js' output='js/minified.js' %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
     </body>
 </html>
 {% endspaceless %}
