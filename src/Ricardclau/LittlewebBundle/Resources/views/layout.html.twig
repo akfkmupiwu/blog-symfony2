@@ -9,6 +9,11 @@
         <meta content="{% block keywords %}{% trans %} head.keywords {% endtrans %}{% endblock %}" name="keywords"/>
         <meta content="7 days" name="revisit-after"/>
         <title>LittleWeb {% block title %}{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets '@RicardclauLittlewebBundle/Resources/public/css/*' filter='?yui_css' output='css/minified.css' %}
+                <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+            {% endstylesheets %}
+        {% endblock %}
     </head>
     <body>
         <header>
@@ -21,6 +26,11 @@
             {% include 'RicardclauLittlewebBundle::footer.html.twig' %}
         </footer>
     </div>
+    {% block javascripts %}
+        {% javascripts '@RicardclauLittlewebBundle/Resources/public/js/*' filter='?yui_js' output='js/minified.js' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
     </body>
 </html>
 {% endspaceless %}
